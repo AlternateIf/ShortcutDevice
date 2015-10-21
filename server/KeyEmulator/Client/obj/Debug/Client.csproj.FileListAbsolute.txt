@@ -1,0 +1,14 @@
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\bin\Debug\Client.exe.config
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\bin\Debug\Client.exe
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\bin\Debug\Client.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\obj\Debug\MainWindow.g.cs
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\obj\Debug\App.g.cs
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\obj\Debug\Client_MarkupCompile.cache
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\obj\Debug\Client_MarkupCompile.lref
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\obj\Debug\MainWindow.baml
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\obj\Debug\Client.g.resources
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\obj\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\obj\Debug\Client.exe
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\Client\obj\Debug\Client.pdb
