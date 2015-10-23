@@ -3,8 +3,9 @@
 This project is based on the [_Huddle Lamp_](https://github.com/huddlelamp/) which was mainly developed and implemented by [_M.Sc. Roman Rädle_](https://github.com/raedle) and [_Dr. Hans-Christian Jetter_](https://github.com/hcjetter). _Shortcut Device_ is implemented within the bachelor thesis in order to achieve the B.Sc. at the University of Applied Sciences Austria.
 
 ## Table of contents
-- [**Information about the _Huddle Lamp_**](#Information_about_the_Huddle_Lamp_)
-	- [**Huddle Engine**](#Huddle_Engine)
+- 
+- [**Information about the _Huddle Lamp_**](#anchor1)
+	- [**Huddle Engine**](#anchor2)
 	- [**JavaScript API**](#JavaScript_API)
 	- [**Huddle Orbiter**](#Huddle_Orbiter)
 	- [**Demos**](#Demos)
@@ -16,16 +17,17 @@ This project is based on the [_Huddle Lamp_](https://github.com/huddlelamp/) whi
 - [**Creator & Tutor**](#Creator_&_Tutor)
 - [**License**](#License) 
 
+<a name="anchor1"></a>
 ## Information about the _Huddle Lamp_
 
 > The _Huddle Lamp_ - combining both a desk lamp and a camera - is the attempt to create a new way of interaction between the user and computers such as PCs and mobile devices.  
 
 TODO: Describe the basics behind the project
 
+<a name="anchor2"></a>
 ### Huddle Engine
 
 TODO: Write about the Huddle Engine
-
 ### JavaScript API
 
 TODO: Explain what this API is made for
