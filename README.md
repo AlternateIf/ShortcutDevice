@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 # Project Name
+=======
+<snippet>
+  <content><![CDATA[
+# ${1:Project Name}
+>>>>>>> origin/master
 
 TODO: Write a project description
 
@@ -28,4 +34,11 @@ TODO: Write credits
 
 ## License
 
+<<<<<<< HEAD
 TODO: Write license
+=======
+TODO: Write license
+]]></content>
+  <tabTrigger>readme</tabTrigger>
+</snippet>
+>>>>>>> origin/master
