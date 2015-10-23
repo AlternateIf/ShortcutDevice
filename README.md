@@ -1,10 +1,9 @@
 # Shortcut Device
 
-This project is based on the _Huddle Lamp_ mainly developed and implemented by Roman Raedle and Hans-Christian Jetter.  
+This project is based on the [_Huddle Lamp_](https://github.com/huddlelamp/) mainly developed and implemented by Roman Raedle and Hans-Christian Jetter.  
 
-> Huddle is a client-side JavaScript API to develop multi-device and multi-display applications. 
-It allows you to turn arbitrary tables or flat surfaces into an interactive surface  
-- [Roman Raedle](https://github.com/raedle/meteor-huddle)
+> The _Huddle Lamp Project_ -combining both a desk lamp and a camera- is the attempt to create a new way of interaction between 
+the user and devices including computers and other devices.
 
 The _Shortcut Device_ - in this case a tablet - loads the website from the _Huddle Server_. This can be achieved through any built-in browser but 
 keep in mind that not every browser may support all of the _JavaScript Features_ used. 
