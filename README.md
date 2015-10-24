@@ -21,27 +21,63 @@ This project is based on the [_Huddle Lamp_](https://github.com/huddlelamp/) whi
 
 > The _Huddle Lamp_ - combining both a desk lamp and a camera - is the attempt to create a new way of interaction between the user and computers such as PCs and mobile devices.  
 
-TODO: Describe the basics behind the project
+The built in RGB-D camera precisely tracks smartphones and tablets located within a limited area on a table. Moreover _Huddle Lamp_ observes movements of hands which allows developers to make use of cross-device interaction. Due to a web-based pairing approach users simply have to place a device below the camera and open a URL. This URL forwards them to webpage which uses _Huddle Lamps_ JavaScript API in order to make use of the the new interaction.
 
+**More in-depth information about the _Huddle Lamp_:**
+
+- [_Huddle Lamp_ Website](http://huddlelamp.org/)
+- [Abstract about _Huddle Lamp_](http://huddlelamp.org/wp-content/uploads/2014/09/HuddleLamp_ITS2014.pdf#viewer.action=download)
+
+---
 <a name="engine"></a>
 ### Huddle Engine
 
-<a name="api"></a>
 TODO: Write about the Huddle Engine
+
+**More in-depth information about the engine:**
+
+- [Huddle-Engine](https://github.com/huddlelamp/huddle-engine)
+
+<br/>
+
+---
+<a name="api"></a>
 ### JavaScript API
 
 TODO: Explain what this API is made for
 
+**More in-depth information about the API:**
+
+- [Huddle JavaScript API](https://github.com/raedle/meteor-huddle)
+
+<br/>
+
+---
 <a name="orbiter"></a>
 ### Huddle Orbiter
 
 TODO: Write about the Orbiter and the advantages
 
+**More in-depth information about the Huddle Orbiter:**
+
+- [Huddle Orbiter](https://github.com/huddlelamp/huddle-orbiter)
+
+<br/>
+
+---
 <a name="demos"></a>
 ### Demos
 
 TODO: Summarize the demos
 
+**More in-depth information about the demos:**
+
+- [Where is Waldo](https://github.com/huddlelamp/where-is-waldo)
+- [Map](https://github.com/huddlelamp/demo-app)
+
+<br/>
+
+---
 <a name="installation"></a>
 ## Installation
 
