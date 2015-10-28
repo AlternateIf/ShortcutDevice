@@ -21,7 +21,9 @@ This project is based on the [_Huddle Lamp_](https://github.com/huddlelamp/) whi
 
 > The _Huddle Lamp_ - combining both a desk lamp and a camera - is the attempt to create a new way of interaction between the user and computers such as PCs and mobile devices.  
 
-The built in RGB-D camera precisely tracks smartphones and tablets located within a limited area on a table. Moreover _Huddle Lamp_ observes movements of hands which allows developers to make use of cross-device interaction. Due to a web-based pairing approach users simply have to place a device below the camera and open a URL. This URL forwards them to webpage which uses _Huddle Lamps_ JavaScript API in order to make use of the the new interaction.
+The built in RGB-D camera precisely tracks smartphones and tablets located within a limited area on a table. Moreover _Huddle Lamp_ observes movements of hands that allows developers to make use of cross-device interaction. Due to a web-based pairing approach users simply have to place a device below the camera and open a URL. This URL forwards them to webpage which uses _Huddle Lamps_ JavaScript API in order to make use of the the new interaction.
+
+In order to work with the _Huddle Lamp_ you need to run the _Huddle Engine_ on any server and interact with it through the included JavaScript-API. To be more precise, you run any service that uses JavaScript on either a server or your PC. Next, you connect to the server that runs the _Huddle Engine_ using a JavaScript-API. To get more information about the _Huddle Project_ check out the following links. If you want to get more insight on setting up the environment check out [_Installation_](#installation) and the [_Software-Architecture_](#architecture). I also recommend taking a look at the [_Huddle Engine_](#engine) and the [_Javascript API_](#api)
 
 **More in-depth information about the _Huddle Lamp_:**
 
@@ -90,6 +92,8 @@ TODO: Write usage instructions
 
 <a name="device"></a>
 ## Shortcut Device
+
+![software architecture](/diagram/img/architecture/softwareArchitecture.png)
 
 TODO: Write about the actual project. Provide diagrams, architectures and code
 
