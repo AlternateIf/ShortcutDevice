@@ -43,9 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="models\Keystroke.cs" />
+    <Compile Include="models\Shortcut.cs" />
     <Compile Include="helper\ProcessHandler.cs" />
-    <Compile Include="models\Message.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -54,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dal\" />
+    <Folder Include="dbscripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
