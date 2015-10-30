@@ -3,3 +3,4 @@ C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\WebSocket\bin\
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\WebSocket\bin\Debug\WebSocket.pdb
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\WebSocket\obj\Debug\WebSocket.exe
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\WebSocket\obj\Debug\WebSocket.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\WebSocket\obj\Debug\WebSocket.csprojResolveAssemblyReference.cache

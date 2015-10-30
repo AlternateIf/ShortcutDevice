@@ -27,6 +27,8 @@ namespace WebSocket {
       Console.WriteLine("Server is listening to {0} on port {1}.", HOST_ADDRESS, PORT);
       TcpClient client = server.AcceptTcpClient();
       #endregion
+
+
     }
   }
 }
