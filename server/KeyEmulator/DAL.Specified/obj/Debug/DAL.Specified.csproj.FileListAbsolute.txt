@@ -1,0 +1,8 @@
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL.Specified\bin\Debug\DAL.Specified.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL.Specified\bin\Debug\DAL.Specified.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL.Specified\bin\Debug\DAL.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL.Specified\bin\Debug\MySql.Data.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL.Specified\bin\Debug\DAL.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL.Specified\obj\Debug\DAL.Specified.csprojResolveAssemblyReference.cache
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL.Specified\obj\Debug\DAL.Specified.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL.Specified\obj\Debug\DAL.Specified.pdb

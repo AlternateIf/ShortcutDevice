@@ -1,0 +1,15 @@
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\BLUnitTest.dll.config
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\BLUnitTest.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\BLUnitTest.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\BL.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\DAL.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\DAL.Specified.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\MySql.Data.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\BL.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\DAL.Specified.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\DAL.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\de\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\obj\Debug\BLUnitTest.dll
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\obj\Debug\BLUnitTest.pdb
