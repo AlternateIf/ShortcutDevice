@@ -49,6 +49,10 @@
       <Project>{478ca7e3-8d7e-4e0f-88ac-b037862315aa}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebSocket\WebSocket.csproj">
+      <Project>{a515e9e5-8001-4133-ad72-c16ea59b65e2}</Project>
+      <Name>WebSocket</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

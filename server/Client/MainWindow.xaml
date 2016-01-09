@@ -4,27 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client"
+        xmlns:ViewModel="clr-namespace:Client.ViewModel"
+        xmlns:Views="clr-namespace:Client.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="820" Width="1024">
-    <Grid Height="800">
+        ResizeMode="NoResize"
+        Height="700"
+        Width="680"
+        Title="ShortcutDevice Backend">
+    <Window.DataContext>
+        <ViewModel:MainViewModel />
+    </Window.DataContext>
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="360"/>
-            <RowDefinition Height="360"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-        </Grid>
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-        </Grid>
+        <Views:MainView Grid.Row="0" Margin="0,15,0,15"/>
     </Grid>
 </Window>

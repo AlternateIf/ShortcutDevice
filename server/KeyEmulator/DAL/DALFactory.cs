@@ -13,9 +13,14 @@ namespace DAL {
     }
 
     public static IDatabase CreateDatabase() {
-      string connectionString = ConfigurationManager.
-        ConnectionStrings["DefaultConnectionString"].ConnectionString;
-      return CreateDatabase(connectionString);
+      try {
+        string connectionString = ConfigurationManager.
+          ConnectionStrings["DefaultConnectionString"].ConnectionString;
+        return CreateDatabase(connectionString);
+      }
+      catch (Exception) {
+        return null;
+      }
     }
 
     public static IDatabase CreateDatabase(string connectionString) {

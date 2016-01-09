@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Client.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        xmlns:Views="clr-namespace:Client.Views"
+        mc:Ignorable="d ignore"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <StackPanel>
+        <StackPanel x:Name="Menu" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="ProcessButton" Background="White" Foreground="Black" HorizontalAlignment="Center" MouseEnter="ProcessButton_MouseEnter" 
+                MouseLeave="ProcessButton_MouseLeave" BorderThickness="0,0,0,3" Content="Prozesse" FontSize="16" FontWeight="Heavy" FontStyle="Italic"
+                Command="{Binding OnProcessClickCommand}" Margin="0,0,2,0">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="{Binding ProcessBorder}" />
+                </Button.BorderBrush>
+            </Button>
+            <Button x:Name="PresetButton" Background="White" Foreground="Black"  HorizontalAlignment="Center" MouseEnter="ProcessButton_MouseEnter" 
+                MouseLeave="ProcessButton_MouseLeave" BorderThickness="0,0,0,3" Content="Entwürfe" FontSize="16" FontWeight="Heavy" FontStyle="Italic"
+                Command="{Binding OnPresetClickCommand}" Margin="2,0,0,0">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="{Binding PresetBorder}" />
+                </Button.BorderBrush>
+            </Button>
+        </StackPanel>
+        <StackPanel Visibility="{Binding VisibilityDefault, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+            <Views:DefaultView Grid.Row="1" x:Name="DefaultView"/>
+        </StackPanel>
+        <StackPanel Visibility="{Binding VisibilityPreset, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+            <Views:PresetView Grid.Row="2" x:Name="PresetView"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

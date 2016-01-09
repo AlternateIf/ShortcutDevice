@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using WebSocket.helper;
 using WebSocket.models;
 namespace WebSocket {
-  class EmulationHandler {
+  public class EmulationHandler {
     #region DLL Imports
     [DllImport("user32.dll")]
     static extern bool SetForegroundWindow(IntPtr hWnd);

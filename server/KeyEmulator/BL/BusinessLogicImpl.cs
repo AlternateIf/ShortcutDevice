@@ -1,5 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
 using DAL;
+using WebSocket;
+using WebSocket.helper;
 
 namespace BL {
   public class BusinessLogicImpl : BusinessLogic {
@@ -71,6 +76,26 @@ namespace BL {
         }
         presets.Add(preset);
         return presetDAO.InsertEager(preset) != 0;
+      }
+    }
+
+    public IList<Process> GetProcessList() {
+      IList<Process> temp = ProcessHandler.GetProcessList();
+      IList<Process> result = new List<Process>();
+      foreach (var process in temp) {
+        if (process.MainWindowTitle != null && process.MainWindowTitle != "")
+          result.Add(process);
+      }
+      return result;
+    }
+
+    public double getProcessCpuUsage(Process process) {
+      using (PerformanceCounter pcProcess = new PerformanceCounter("Process", "% Processor Time", process.ProcessName, true)) {
+        for (int i = 0; i < 4; i++) {
+          pcProcess.NextValue();
+          Thread.Sleep(200);
+        }
+        return pcProcess.NextValue() / Environment.ProcessorCount;
       }
     }
   }

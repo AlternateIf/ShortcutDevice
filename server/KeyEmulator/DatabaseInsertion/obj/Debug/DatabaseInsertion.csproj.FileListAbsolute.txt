@@ -11,3 +11,5 @@ C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DatabaseInsert
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DatabaseInsertion\bin\Debug\DAL.Specified.pdb
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DatabaseInsertion\bin\Debug\DAL.pdb
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DatabaseInsertion\obj\Debug\DatabaseInsertion.csprojResolveAssemblyReference.cache
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DatabaseInsertion\bin\Debug\WebSocket.exe
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DatabaseInsertion\bin\Debug\WebSocket.pdb

@@ -6,3 +6,5 @@ C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BL\bin\Debug\D
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BL\obj\Debug\BL.dll
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BL\obj\Debug\BL.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BL\bin\Debug\WebSocket.exe
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BL\bin\Debug\WebSocket.pdb

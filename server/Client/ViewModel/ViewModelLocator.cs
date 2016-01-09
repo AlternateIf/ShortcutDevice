@@ -25,11 +25,25 @@ namespace Client.ViewModel {
       ////}
 
       SimpleIoc.Default.Register<MainViewModel>();
+      SimpleIoc.Default.Register<DefaultViewModel>();
+      SimpleIoc.Default.Register<PresetViewModel>();
     }
 
     public MainViewModel Main {
       get {
         return ServiceLocator.Current.GetInstance<MainViewModel>();
+      }
+    }
+
+    public DefaultViewModel Default {
+      get {
+        return ServiceLocator.Current.GetInstance<DefaultViewModel>();
+      }
+    }
+
+    public PresetViewModel Preset {
+      get {
+        return ServiceLocator.Current.GetInstance<PresetViewModel>();
       }
     }
 

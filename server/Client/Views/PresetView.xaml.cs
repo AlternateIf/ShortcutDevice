@@ -1,0 +1,16 @@
+﻿using System.Windows;
+using System.Windows.Controls;
+
+namespace Client.Views {
+  /// <summary>
+  /// Description for PresetView.
+  /// </summary>
+  public partial class PresetView : UserControl {
+    /// <summary>
+    /// Initializes a new instance of the PresetView class.
+    /// </summary>
+    public PresetView() {
+      InitializeComponent();
+    }
+  }
+}

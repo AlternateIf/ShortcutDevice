@@ -3,3 +3,4 @@ C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\ConsoleApplica
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\ConsoleApplication1\obj\Debug\ConnectionClient.csprojResolveAssemblyReference.cache

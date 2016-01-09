@@ -13,3 +13,5 @@ C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\obj\Debug\BLUnitTest.dll
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\obj\Debug\BLUnitTest.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\WebSocket.exe
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\BLUnitTest\bin\Debug\WebSocket.pdb

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace WebSocket.helper {
-  class ProcessHandler {
+  public class ProcessHandler {
     static Process assignedProcess = null;
     static bool onBackground = false;
 
