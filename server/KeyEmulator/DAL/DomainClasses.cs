@@ -22,8 +22,11 @@ namespace DAL {
 
     public override bool Equals(object obj) {
       Preset preset = obj as Preset;
-      return preset.id == this.id && preset.name == this.name &&
-        preset.color == this.color && preset.buttons.SequenceEqual(this.buttons);
+      if (preset != null)
+        return preset.id == this.id && preset.name == this.name &&
+         preset.color == this.color && preset.buttons.SequenceEqual(this.buttons);
+      else
+        return false;
     }
     public override int GetHashCode() {
       return base.GetHashCode();

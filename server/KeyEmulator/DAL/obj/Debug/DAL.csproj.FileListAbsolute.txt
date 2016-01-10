@@ -3,3 +3,4 @@ C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL\bin\Debug\
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL\bin\Debug\MySql.Data.dll
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL\obj\Debug\DAL.dll
 C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL\obj\Debug\DAL.pdb
+C:\Users\david\Documents\GitHub\ShortcutDevice\server\KeyEmulator\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

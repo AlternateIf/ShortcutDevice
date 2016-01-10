@@ -3,143 +3,230 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         mc:Ignorable="d ignore"
         DataContext="{Binding Preset, Source={StaticResource Locator}}">
     <Border Grid.Row="0" BorderBrush="LightSteelBlue" BorderThickness="0,2,0,0">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="89*"/>
-                <ColumnDefinition Width="111*"/>
-                <ColumnDefinition Width="200*"/>
-            </Grid.ColumnDefinitions>
-            <ListBox x:Name="Presets" Grid.Column="0" HorizontalAlignment="Center" Width="200" AlternationCount="2" 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="3" Width="400" Height="300" Background="LightGray"
+                        Panel.ZIndex="100" Visibility="{Binding ErrorVisibility}">
+                <StackPanel>
+                    <TextBlock Foreground="Black" TextWrapping="Wrap" Text="{Binding ErrorText}" Width="350" FontSize="14" Height="200" Margin="0,16,0,0" Panel.ZIndex="100"/>
+                    <Button HorizontalAlignment="Center" Margin="0,16,0,0" FontSize="14" BorderThickness="0"
+                        Background="#1FA3EB" Foreground="White" Height="30" Width="100" Panel.ZIndex="100" Command="{Binding OkCommand}">
+                        <TextBlock>Ok</TextBlock>
+                    </Button>
+                </StackPanel>
+            </Border>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <ListBox x:Name="Presets" Grid.Column="0" HorizontalAlignment="Center" Width="200" AlternationCount="2" 
                      FontSize="14" FontFamily="Verdana" Height="550" VerticalAlignment="Top" Margin="0,0,0,0"
-                     BorderBrush="LightSteelBlue" BorderThickness="2,0,2,2">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel VerticalAlignment="Center">
-                            <TextBlock TextWrapping="Wrap" Text="{Binding name}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="ListBoxItem">
-                        <Style.Triggers>
-                            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                                <Setter Property="Background" Value="LightSteelBlue" />
-                            </Trigger>
-                            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                                <Setter Property="Background" Value="White" />
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </ListBox.ItemContainerStyle>
-            </ListBox>
-            <Grid Grid.Column="1" x:Name="ButtonGrid" Grid.ColumnSpan="3">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Margin="0,16,0,26">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Border Grid.Column="0" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Button1" Width="120" Margin="0,0,0,20" TextAlignment="Center"/>
-                            <ComboBox Width="120" Margin="0,0,0,20"/>
-                            <StackPanel Orientation="Horizontal" Visibility="Visible" HorizontalAlignment="Center">
-                                <TextBox Width="52" Margin="0,0,8,0"/>
-                                <TextBox Width="52" Margin="8,0,0,0"/>
+                     BorderBrush="LightSteelBlue" BorderThickness="2,0,2,2" ItemsSource="{Binding Presets, UpdateSourceTrigger=PropertyChanged}"
+                     SelectedValuePath="name" SelectedValue="{Binding SelectedPreset.name}" 
+                     SelectedItem="{Binding SelectedPreset, UpdateSourceTrigger=PropertyChanged}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock TextWrapping="Wrap" Text="{Binding name}" />
                             </StackPanel>
-                            <StackPanel>
-                                <TextBox Width="120" TextWrapping="Wrap" AcceptsReturn="True" Visibility="Collapsed"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Style.Triggers>
+                                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                    <Setter Property="Background" Value="LightSteelBlue" />
+                                </Trigger>
+                                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                    <Setter Property="Background" Value="White" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SelectCommand}" CommandParameter="{Binding ElementName=Presets, Path=SelectedItem}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ListBox>
+                <Grid Grid.Column="1" x:Name="ButtonGrid" Visibility="Visible">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="0,16,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
+                            <StackPanel Orientation="Vertical">
+                                <TextBox Text="{Binding Button1Text}" Width="120" Margin="0,20,0,20" TextAlignment="Center"/>
+                                <ComboBox Width="120" Margin="0,0,0,20" ItemsSource="{Binding EmulationPossiblity}"
+                                          SelectedItem="{Binding SelectedEmulation1}">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding SelectionChanged1}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
+                                <StackPanel Orientation="Horizontal" Visibility="{Binding IsShortcut1, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center">
+                                    <ComboBox Width="52" Margin="0,0,8,0" ItemsSource="{Binding ShortcutKeys}" SelectedItem="{Binding SelectedShortcut1}"/>
+                                    <TextBox Width="52" Margin="8,0,0,0" Text="{Binding TextBox1}"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBox Margin="0,0,0,0" Width="120" TextWrapping="Wrap" AcceptsReturn="True" 
+                                             Visibility="{Binding IsMessage1}" Text="{Binding TextBox1}"/>
+                                </StackPanel>
                             </StackPanel>
-                        </StackPanel>
-                    </Border>
-                    <Border Grid.Column="1" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Button1" Width="120" Margin="0,0,0,20" TextAlignment="Center"/>
-                            <ComboBox Width="120" Margin="0,0,0,20"/>
-                            <StackPanel Orientation="Horizontal" Visibility="Visible" HorizontalAlignment="Center">
-                                <TextBox Width="52" Margin="0,0,8,0"/>
-                                <TextBox Width="52" Margin="8,0,0,0"/>
+                        </Border>
+                        <Border Grid.Column="1" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
+                            <StackPanel Orientation="Vertical">
+                                <TextBox Text="{Binding Button2Text}" Width="120" Margin="0,20,0,20" TextAlignment="Center"/>
+                                <ComboBox Width="120" Margin="0,0,0,20" ItemsSource="{Binding EmulationPossiblity}"
+                                          SelectedItem="{Binding SelectedEmulation2}" >
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding SelectionChanged2}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
+                                <StackPanel Orientation="Horizontal" Visibility="{Binding IsShortcut2, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center">
+                                    <ComboBox Width="52" Margin="0,0,8,0" ItemsSource="{Binding ShortcutKeys}" SelectedItem="{Binding SelectedShortcut2}"/>
+                                    <TextBox Width="52" Margin="8,0,0,0" Text="{Binding TextBox2}"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBox Margin="0,0,0,0" Width="120" TextWrapping="Wrap" AcceptsReturn="True" 
+                                             Visibility="{Binding IsMessage2}" Text="{Binding TextBox2}"/>
+                                </StackPanel>
                             </StackPanel>
-                            <StackPanel>
-                                <TextBox Width="120" TextWrapping="Wrap" AcceptsReturn="True" Visibility="Collapsed"/>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="0,16,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
+                            <StackPanel Orientation="Vertical">
+                                <TextBox Text="{Binding Button3Text}" Width="120" Margin="0,20,0,20" TextAlignment="Center"/>
+                                <ComboBox Width="120" Margin="0,0,0,20" ItemsSource="{Binding EmulationPossiblity}"
+                                          SelectedItem="{Binding SelectedEmulation3}" >
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding SelectionChanged3}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
+                                <StackPanel Orientation="Horizontal" Visibility="{Binding IsShortcut3, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center">
+                                    <ComboBox Width="52" Margin="0,0,8,0" ItemsSource="{Binding ShortcutKeys}" SelectedItem="{Binding SelectedShortcut3}"/>
+                                    <TextBox Width="52" Margin="8,0,0,0" Text="{Binding TextBox3}"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBox Margin="0,0,0,0" Width="120" TextWrapping="Wrap" AcceptsReturn="True" 
+                                             Visibility="{Binding IsMessage3}" Text="{Binding TextBox3}"/>
+                                </StackPanel>
                             </StackPanel>
-                        </StackPanel>
-                    </Border>
-                </Grid>
-                <Grid Grid.Row="1" Margin="0,16,0,26">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Border Grid.Column="0" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Button1" Width="120" Margin="0,0,0,20" TextAlignment="Center"/>
-                            <ComboBox Width="120" Margin="0,0,0,20"/>
-                            <StackPanel Orientation="Horizontal" Visibility="Visible" HorizontalAlignment="Center">
-                                <TextBox Width="52" Margin="0,0,8,0"/>
-                                <TextBox Width="52" Margin="8,0,0,0"/>
+                        </Border>
+                        <Border Grid.Column="1" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
+                            <StackPanel Orientation="Vertical">
+                                <TextBox Text="{Binding Button4Text}" Width="120" Margin="0,20,0,20" TextAlignment="Center"/>
+                                <ComboBox Width="120" Margin="0,0,0,20" ItemsSource="{Binding EmulationPossiblity}"
+                                          SelectedItem="{Binding SelectedEmulation4}" >
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding SelectionChanged4}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
+                                <StackPanel Orientation="Horizontal" Visibility="{Binding IsShortcut4, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center">
+                                    <ComboBox Width="52" Margin="0,0,8,0" ItemsSource="{Binding ShortcutKeys}" SelectedItem="{Binding SelectedShortcut4}"/>
+                                    <TextBox Width="52" Margin="8,0,0,0" Text="{Binding TextBox4}"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBox Margin="0,0,0,0" Width="120" TextWrapping="Wrap" AcceptsReturn="True" 
+                                             Visibility="{Binding IsMessage4}" Text="{Binding TextBox4}"/>
+                                </StackPanel>
                             </StackPanel>
-                            <StackPanel>
-                                <TextBox Width="120" TextWrapping="Wrap" AcceptsReturn="True" Visibility="Collapsed"/>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="2" Margin="0,16,0,16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
+                            <StackPanel Orientation="Vertical">
+                                <TextBox Text="{Binding Button5Text}" Width="120" Margin="0,20,0,20" TextAlignment="Center"/>
+                                <ComboBox Width="120" Margin="0,0,0,20" ItemsSource="{Binding EmulationPossiblity}"
+                                          SelectedItem="{Binding SelectedEmulation5}" >
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding SelectionChanged5}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
+                                <StackPanel Orientation="Horizontal" Visibility="{Binding IsShortcut5, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center">
+                                    <ComboBox Width="52" Margin="0,0,8,0" ItemsSource="{Binding ShortcutKeys}" SelectedItem="{Binding SelectedShortcut5}"/>
+                                    <TextBox Width="52" Margin="8,0,0,0" Text="{Binding TextBox5}"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBox Margin="0,0,0,0" Width="120" TextWrapping="Wrap" AcceptsReturn="True" 
+                                             Visibility="{Binding IsMessage5}" Text="{Binding TextBox5}"/>
+                                </StackPanel>
                             </StackPanel>
-                        </StackPanel>
-                    </Border>
-                    <Border Grid.Column="1" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Button1" Width="120" Margin="0,0,0,20" TextAlignment="Center"/>
-                            <ComboBox Width="120" Margin="0,0,0,20"/>
-                            <StackPanel Orientation="Horizontal" Visibility="Visible" HorizontalAlignment="Center">
-                                <TextBox Width="52" Margin="0,0,8,0"/>
-                                <TextBox Width="52" Margin="8,0,0,0"/>
+                        </Border>
+                        <Border Grid.Column="1" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
+                            <StackPanel Orientation="Vertical">
+                                <TextBox Text="{Binding Button6Text}" Width="120" Margin="0,20,0,20" TextAlignment="Center"/>
+                                <ComboBox Width="120" Margin="0,0,0,20" ItemsSource="{Binding EmulationPossiblity}"
+                                          SelectedItem="{Binding SelectedEmulation6}" >
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding SelectionChanged6}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
+                                <StackPanel Orientation="Horizontal" Visibility="{Binding IsShortcut6, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center">
+                                    <ComboBox Width="52" Margin="0,0,8,0" ItemsSource="{Binding ShortcutKeys}" SelectedItem="{Binding SelectedShortcut6}"/>
+                                    <TextBox Width="52"  Margin="8,0,0,0" Text="{Binding TextBox6}"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBox Margin="0,0,0,0" Width="120" TextWrapping="Wrap" AcceptsReturn="True" 
+                                             Visibility="{Binding IsMessage6}" Text="{Binding TextBox6}"/>
+                                </StackPanel>
                             </StackPanel>
-                            <StackPanel>
-                                <TextBox Width="120" TextWrapping="Wrap" AcceptsReturn="True" Visibility="Collapsed"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
-                </Grid>
-                <Grid Grid.Row="2" Margin="0,16,0,16">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Border Grid.Column="0" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Button1" Width="120" Margin="0,0,0,20" TextAlignment="Center"/>
-                            <ComboBox Width="120" Margin="0,0,0,20"/>
-                            <StackPanel Orientation="Horizontal" Visibility="Visible" HorizontalAlignment="Center">
-                                <TextBox Width="52" Margin="0,0,8,0"/>
-                                <TextBox Width="52" Margin="8,0,0,0"/>
-                            </StackPanel>
-                            <StackPanel>
-                                <TextBox Width="120" TextWrapping="Wrap" AcceptsReturn="True" Visibility="Collapsed"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
-                    <Border Grid.Column="1" BorderBrush="LightSteelBlue" BorderThickness="2" CornerRadius="13" Width="200" Height="150">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="Button1" Width="120" Margin="0,0,0,20" TextAlignment="Center"/>
-                            <ComboBox Width="120" Margin="0,0,0,20"/>
-                            <StackPanel Orientation="Horizontal" Visibility="Visible" HorizontalAlignment="Center">
-                                <TextBox Width="52" Margin="0,0,8,0"/>
-                                <TextBox Width="52" Margin="8,0,0,0"/>
-                            </StackPanel>
-                            <StackPanel>
-                                <TextBox Width="120" TextWrapping="Wrap" AcceptsReturn="True" Visibility="Collapsed"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Border>
+                        </Border>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
+                        <TextBlock Text="Entwurf-Name:" />
+                        <TextBox Width="100" Text="{Binding PresetName}" Margin="8,0,16,0"/>
+                        <TextBlock Text="Entwurf-Farbe" Margin="0,0,8,0"/>
+                        <ComboBox Width="100" ItemsSource="{Binding PossibleColors}" SelectedItem="{Binding SelectedColor}"/>
+                    </StackPanel>
                 </Grid>
             </Grid>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,8,0,8" HorizontalAlignment="Center">
+                <Button HorizontalAlignment="Center" Margin="0,0,0,0" FontSize="14" BorderThickness="0"
+                        Background="#1FA3EB" Foreground="White" Height="30" Width="100" Command="{Binding CreateCommand}">
+                    <TextBlock Text="{Binding ButtonText}"/>
+                </Button>
+                <Button HorizontalAlignment="Center" Margin="16,0,0,0" FontSize="14" BorderThickness="0"
+                        Background="#1FA3EB" Foreground="White" Height="30" Width="100" Command="{Binding DeleteCommand}">
+                    <TextBlock>Löschen</TextBlock>
+                </Button>
+            </StackPanel>
         </Grid>
     </Border>
 </UserControl>
